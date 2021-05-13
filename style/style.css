@@ -1,0 +1,107 @@
+body {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  background-color: #2d3436;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.crossroad {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 200px 200px 200px;
+      grid-template-columns: 200px 200px 200px;
+}
+
+.crossroad .box {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #d5d3d3;
+}
+
+.crossroad .box--2 {
+  border-bottom-color: transparent;
+}
+
+.crossroad .box--4 {
+  border-right-color: transparent;
+}
+
+.crossroad .box--5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-color: transparent;
+}
+
+.crossroad .box--6 {
+  border-left-color: transparent;
+}
+
+.crossroad .box--8 {
+  border-top-color: transparent;
+}
+
+.crossroad .box--traffic-lights {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.crossroad .traffic-lights {
+  width: 30px;
+  height: 30px;
+  border: 1px solid red;
+}
+
+.crossroad .traffic-lights--stop {
+  border: 1px solid red;
+  background: red;
+}
+
+.crossroad .traffic-lights--set {
+  border: 1px solid yellow;
+  background: yellow;
+}
+
+.crossroad .traffic-lights--start {
+  border: 1px solid green;
+  background: green;
+}
+
+.crossroad .traffic-lights--additional--right {
+  border: 1px solid green;
+  -webkit-box-shadow: 0px 0px 5px green;
+          box-shadow: 0px 0px 5px green;
+}
+
+.crossroad .traffic-lights--additional--left {
+  border: 1px solid green;
+  -webkit-box-shadow: 00px 0px 5px green;
+          box-shadow: 00px 0px 5px green;
+}
+/*# sourceMappingURL=style.css.map */
