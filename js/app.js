@@ -12,18 +12,34 @@ const additional = yellow + 3500;
 const stop = additional + 1500;
 
 class Traffic {
-	constructor(samaforVertical, semaforHorizontal) {
-		this.samaforVertical = samaforVertical;
-		this.semaforHorizontal = semaforHorizontal;
+	constructor() {}
+
+	start(removeStart, addStart, side) {
+		removeStart.removeClass(`traffic-lights--additional--${side}`);
+		removeStart.removeClass(startClass);
+		addStart.addClass(startClass);
+	}
+
+	set(trafficLight) {
+		trafficLight.removeClass(startClass);
+		trafficLight.addClass(setClass);
+	}
+
+	additional(trafficLight, side) {
+		trafficLight.removeClass(setClass);
+		trafficLight.addClass(`traffic-lights--additional--${side}`);
+	}
+
+	stop(side) {
+		trafficLight.removeClass(`traffic-lights--additional--${side}`);
+	}
+
+	startTrafficLights() {
+		this.vertical();
 	}
 
 	horizontal() {
-		this.semaforHorizontal = false;
-		this.samaforVertical = true;
-
-		trafficLightVertical.removeClass("traffic-lights--additional--left");
-		trafficLightVertical.removeClass(startClass);
-		trafficLightHorizontal.addClass(startClass);
+		this.start(trafficLightVertical, trafficLightHorizontal, "left");
 
 		setTimeout(() => {
 			this.set(trafficLightHorizontal);
@@ -43,12 +59,7 @@ class Traffic {
 	}
 
 	vertical() {
-		this.samaforVertical = false;
-		this.semaforHorizontal = true;
-
-		trafficLightHorizontal.removeClass("traffic-lights--additional--right");
-		trafficLightHorizontal.removeClass(startClass);
-		trafficLightVertical.addClass(startClass);
+		this.start(trafficLightHorizontal, trafficLightVertical, "right");
 
 		setTimeout(() => {
 			this.set(trafficLightVertical);
@@ -66,26 +77,8 @@ class Traffic {
 			this.horizontal();
 		}, stop);
 	}
-
-	set(trafficLight) {
-		trafficLight.removeClass(startClass);
-		trafficLight.addClass(setClass);
-	}
-
-	additional(trafficLight, side) {
-		trafficLight.removeClass(setClass);
-		trafficLight.addClass(`traffic-lights--additional--${side}`);
-	}
-
-	stop(side) {
-		trafficLight.removeClass(`traffic-lights--additional--${side}`);
-	}
-
-	start() {
-		this.vertical();
-	}
 }
 
-const newTraffic = new Traffic(false, true);
+const newTraffic = new Traffic();
 
-newTraffic.start();
+newTraffic.startTrafficLights();
