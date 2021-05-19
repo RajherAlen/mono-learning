@@ -1,3 +1,7 @@
+import Duration from "./duration";
+
+const duration = new Duration(6000, 1000, 1000, 1500);
+
 export class Actions {
 	startClass = "traffic-lights--start";
 	setClass = "traffic-lights--set";
@@ -23,5 +27,21 @@ export class Actions {
 	additional() {
 		this.currentLight.removeClass(this.setClass);
 		this.currentLight.addClass(this.additionalClass);
+	}
+
+	activateLights() {
+		this.start();
+
+		setTimeout(() => {
+			this.set();
+		}, duration.green);
+
+		setTimeout(() => {
+			this.additional();
+		}, duration.yellow);
+
+		setTimeout(() => {
+			this.stop();
+		}, duration.additional);
 	}
 }
