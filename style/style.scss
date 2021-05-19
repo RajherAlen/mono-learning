@@ -76,16 +76,8 @@ body {
 		}
 
 		&--additional {
-			&--right {
-				border: 1px solid green;
-
-				box-shadow: 0px 0px 5px green;
-			}
-
-			&--left {
-				border: 1px solid green;
-				box-shadow: 00px 0px 5px green;
-			}
+			border: 1px solid green;
+			box-shadow: 0px 0px 5px green;
 		}
 	}
 }
